@@ -54,8 +54,13 @@ export default function Home() {
         <img
           className="absolute z-0 right-0 -mt-5 md:-mt-10 w-40"
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+          alt="react"
         />
-        <img className="-scale-x-90" src="/assets/me.png" />
+        <img
+          className="-scale-x-90"
+          src="/assets/me.png"
+          alt="sarath adhithya"
+        />
       </div>
     </PageLayout>
   );

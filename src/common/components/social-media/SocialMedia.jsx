@@ -13,7 +13,7 @@ export const SocialMedia = () => {
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.98 }}
         >
-          <img className="w-8 sm:w-10" src={image} />
+          <img className="w-8 sm:w-10" src={image} alt={name} />
         </motion.a>
       ))}
     </div>

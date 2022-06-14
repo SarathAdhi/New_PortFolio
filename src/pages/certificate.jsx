@@ -42,8 +42,9 @@ export default function Certificate({ certificateDatas }) {
             <LoadingSvg className="animate-spin w-16 text-black" />
           </div>
           <img
-            className="w-full z-50 border-2 border-gray-600 rounded-xl bg-loading-pattern bg-center bg-no-repeat"
+            className="w-full z-50 border-2 border-gray-600 rounded-xl"
             src={urlFor(certificateImg)}
+            alt="project-image"
           />
         </div>
       </PopupModal>

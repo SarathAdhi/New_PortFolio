@@ -35,6 +35,7 @@ export const PageLayout = ({ title, className, children }) => {
           content="React, Next, Tailwind-css, UI/UX, Cool user interface, HTML, CSS, JavaScript"
         />
         <meta name="author" content="Sarath Adhithya" />
+        <meta name="theme-color" content="#2a14f7"></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main

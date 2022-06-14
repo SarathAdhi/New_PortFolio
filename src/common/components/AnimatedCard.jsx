@@ -24,7 +24,9 @@ export default function AnimatedCard({
             onClick={() => setSelectedTab(item)}
           >
             {item.icon && item.icon}
-            {item.img && <img className="w-4 md:w-6" src={item.img} />}
+            {item.img && (
+              <img className="w-4 md:w-6" src={item.img} alt={item.label} />
+            )}
             <H4
               className={clsx(
                 "ml-1 !text-xs md:!text-lg md:font-medium",
