@@ -4,6 +4,7 @@ import { client, urlFor } from "../client";
 import { motion } from "framer-motion";
 import { H2 } from "../common/components/elements/Text";
 import PopupModal from "../common/components/PopupModal";
+import { LoadingSvg } from "../common/components/LoadingSvg";
 
 export default function Certificate({ certificateDatas }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -36,9 +37,12 @@ export default function Certificate({ certificateDatas }) {
       </div>
 
       <PopupModal open={isModalOpen} setOpen={setIsModalOpen}>
-        <div className="scroll max-h-[500px] overflow-y-auto">
+        <div className="scroll max-h-[500px] flex flex-col items-center justify-center overflow-y-auto">
+          <div className="absolute w-full  left-[45%] mt-10">
+            <LoadingSvg className="animate-spin w-16 text-black" />
+          </div>
           <img
-            className="w-full border-2 border-gray-600 rounded-xl"
+            className="w-full z-50 border-2 border-gray-600 rounded-xl bg-loading-pattern bg-center bg-no-repeat"
             src={urlFor(certificateImg)}
           />
         </div>

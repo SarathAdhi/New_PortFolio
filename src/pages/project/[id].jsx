@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import React from "react";
 import { client, urlFor } from "../../client";
 import { PageLayout } from "../../common/layout/PageLayout";
@@ -15,7 +14,7 @@ export default function DisplayProject({ projectData }) {
         <div className="w-full lg:w-1/2">
           <img
             src={urlFor(projectData.image)}
-            className="border-[2px] border-black rounded-xl w-full"
+            className="border-[2px]  border-black rounded-xl w-full bg-loading-pattern bg-center bg-no-repeat"
             alt={projectData.name}
           />
         </div>
