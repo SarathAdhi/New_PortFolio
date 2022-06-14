@@ -30,7 +30,7 @@ export default function Skills({ skillsDatas }) {
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                   src={skill.image}
-                  alt={skills.name}
+                  alt={skill.name}
                 />
               </div>
             </motion.li>
