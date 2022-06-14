@@ -25,7 +25,7 @@ const mobileVariant = {
 
 const Navbar = ({ isMobileDevice, title }) => {
   return (
-    <header className="fixed z-40 p-2 md:p-0 flex flex-col justify-between left-0 w-full md:w-12 bottom-0 md:relative">
+    <header className="fixed z-40 px-2 md:p-0 flex flex-col justify-between left-0 w-full md:w-12 bottom-0 md:relative">
       <motion.div
         variants={isMobileDevice ? mobileVariant : desktopVariant}
         transition={{ duration: 0.5 }}
