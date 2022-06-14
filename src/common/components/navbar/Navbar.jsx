@@ -39,11 +39,7 @@ const Navbar = ({ isMobileDevice, title }) => {
           <LinkTag key={key} href={href} image={image} />
         ))}
       </motion.div>
-      {!isMobileDevice && (
-        <div className="-z-10 top-80 right-6 fixed text-white mt-10 rotate-90">
-          Drag
-        </div>
-      )}
+
       <H2
         className={clsx(
           "hidden md:block !text-white -rotate-90",
