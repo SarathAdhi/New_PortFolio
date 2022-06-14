@@ -80,7 +80,10 @@ const contact = () => {
   );
 
   return (
-    <PageLayout title="Contact" className="bg-[#d6d271] justify-center items-center">
+    <PageLayout
+      title="Contact"
+      className="bg-[#d6d271] justify-center items-center"
+    >
       <form
         onSubmit={(e) => submitForm(e)}
         className="w-full md:w-96 flex flex-col gap-y-5 justify-center items-center"

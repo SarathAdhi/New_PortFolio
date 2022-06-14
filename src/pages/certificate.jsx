@@ -10,7 +10,10 @@ const certificate = ({ certificateDatas }) => {
   const [certificateImg, setCertificateImg] = useState("");
 
   return (
-    <PageLayout title="Certificates" className="bg-[#03506F] justify-center items-center pt-10">
+    <PageLayout
+      title="Certificates"
+      className="bg-[#03506F] justify-center items-center pt-10"
+    >
       <div className="flex justify-center flex-wrap">
         {certificateDatas.map((certificate) => {
           return (
