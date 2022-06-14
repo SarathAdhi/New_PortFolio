@@ -65,7 +65,7 @@ export default function Projects({ projectDatas }) {
               whileTap={{ scale: 0.98 }}
             >
               <LinkTag href={"project/" + project.name}>
-                <div className="z-30 shadow-lg shadow-indigo-900 backdrop-blur-sm bg-white/40 flex gap-y-5 flex-col justify-between w-full h-full p-5 rounded-lg duration-300">
+                <div className="z-30 shadow-lg shadow-indigo-900 bg-white/40 flex gap-y-5 flex-col justify-between w-full h-full p-5 rounded-lg duration-300">
                   <H2 className="font-semibold">{project.name}</H2>
                   <p>{project.about.substring(0, 40) + "..."}</p>
                   <div className="flex gap-2 flex-wrap">
