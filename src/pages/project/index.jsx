@@ -23,7 +23,7 @@ const tabs = [
   },
 ];
 
-const projects = ({ projectDatas }) => {
+export default function Projects({ projectDatas }) {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
   const [filteredProjects, setFilteredProjects] = useState([]);
 
@@ -87,9 +87,7 @@ const projects = ({ projectDatas }) => {
       </AnimatedCard>
     </PageLayout>
   );
-};
-
-export default projects;
+}
 
 export async function getServerSideProps() {
   const projectsQuery = '*[_type == "projects"]';

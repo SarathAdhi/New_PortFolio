@@ -3,7 +3,7 @@ import { PageLayout } from "../common/layout/PageLayout";
 import { client } from "../client";
 import { motion } from "framer-motion";
 
-const skills = ({ skillsDatas }) => {
+export default function Skills({ skillsDatas }) {
   return (
     <PageLayout title="Skills" className="bg-[#ecfef5]">
       <ul className="__skills_ul">
@@ -39,9 +39,7 @@ const skills = ({ skillsDatas }) => {
       </ul>
     </PageLayout>
   );
-};
-
-export default skills;
+}
 
 export async function getServerSideProps() {
   const skillsQuery = '*[_type == "skills"] | order(title, asc)';

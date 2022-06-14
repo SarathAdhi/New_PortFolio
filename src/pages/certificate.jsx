@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { H2 } from "../common/components/elements/Text";
 import PopupModal from "../common/components/PopupModal";
 
-const certificate = ({ certificateDatas }) => {
+export default function Certificate({ certificateDatas }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [certificateImg, setCertificateImg] = useState("");
 
@@ -45,9 +45,7 @@ const certificate = ({ certificateDatas }) => {
       </PopupModal>
     </PageLayout>
   );
-};
-
-export default certificate;
+}
 
 export async function getServerSideProps() {
   const certificatesQuery = '*[_type == "certificate"] | order(name, asc)';

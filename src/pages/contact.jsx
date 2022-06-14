@@ -6,7 +6,7 @@ import clsx from "clsx";
 import { ShowSuccessToast } from "../common/components/Toast";
 import { toast } from "react-toastify";
 
-const contact = () => {
+export default function Contact() {
   const [fromName, setFromName] = useState("");
   const [fromEmail, setFromEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -127,6 +127,4 @@ const contact = () => {
       <ShowSuccessToast />
     </PageLayout>
   );
-};
-
-export default contact;
+}

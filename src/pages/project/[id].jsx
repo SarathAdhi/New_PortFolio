@@ -5,7 +5,7 @@ import { PageLayout } from "../../common/layout/PageLayout";
 import { H3, H5 } from "../../common/components/elements/Text";
 import { BsGithub, BsGlobe2 } from "react-icons/bs";
 
-const DisplayProject = ({ projectData }) => {
+export default function DisplayProject({ projectData }) {
   return (
     <PageLayout
       title={projectData.name}
@@ -64,9 +64,7 @@ const DisplayProject = ({ projectData }) => {
       </H3>
     </PageLayout>
   );
-};
-
-export default DisplayProject;
+}
 
 export async function getServerSideProps(context) {
   const { id } = context.query;
