@@ -1,9 +1,9 @@
 import Head from "next/head";
 import React, { useContext } from "react";
 import { motion } from "framer-motion";
-import Navbar from "../components/Navbar/Navbar";
 import clsx from "clsx";
 import { Context } from "../components/context/Context";
+import Navbar from "../components/navbar/Navbar";
 
 const variants = {
   hidden: { opacity: 0, x: -200, y: 0 },
