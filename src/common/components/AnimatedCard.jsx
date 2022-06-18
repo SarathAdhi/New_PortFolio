@@ -6,6 +6,7 @@ export default function AnimatedCard({
   selectedTab,
   setSelectedTab,
   tabs,
+  dark,
   className,
   children,
 }) {
@@ -16,7 +17,7 @@ export default function AnimatedCard({
           <div
             key={item.label}
             className={clsx(
-              "cursor-pointer flex items-center",
+              "cursor-pointer flex items-center z-50 gap-1",
               item === selectedTab
                 ? "bg-indigo-400 px-1 sm:px-2 py-1 rounded-lg"
                 : "px-1 sm:px-2 py-1"
@@ -29,11 +30,15 @@ export default function AnimatedCard({
             )}
             <H4
               className={clsx(
-                "ml-1 !text-xs md:!text-lg md:font-medium",
-                item === selectedTab ? "!text-white" : "!text-indigo-200"
+                "!text-xs md:!text-lg md:font-medium",
+                item === selectedTab
+                  ? "!text-white"
+                  : dark
+                  ? "!text-gray-500"
+                  : "!text-indigo-200"
               )}
             >
-              {`${item.label}`}
+              {item.label}
               {item === selectedTab ? (
                 <motion.div className="underline" layoutId="underline" />
               ) : null}

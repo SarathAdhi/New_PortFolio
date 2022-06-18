@@ -11,10 +11,10 @@ export default function DisplayProject({ projectData }) {
       className="bg-white py-10 lg:py-20 items-center gap-5 md:gap-10"
     >
       <div className="flex justify-around items-center flex-wrap gap-10">
-        <div className="w-full lg:w-1/2">
+        <div className="w-full lg:w-1/2 border-black rounded-xl">
           <img
             src={urlFor(projectData.image)}
-            className="border-[2px]  border-black rounded-xl w-full bg-loading-pattern bg-center bg-no-repeat"
+            className="border-[2px] rounded-xl w-full bg-loading-pattern bg-center bg-[length:100px_100px] bg-no-repeat"
             alt={projectData.name}
           />
         </div>

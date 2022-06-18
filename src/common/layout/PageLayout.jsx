@@ -48,7 +48,7 @@ export const PageLayout = ({ title, className, children }) => {
           initial="hidden"
           animate="enter"
           exit="exit"
-          transition={{ type: "linear", duration: 0.5 }}
+          transition={{ type: "keyframes", duration: 0.5 }}
           className={clsx(
             "w-full mb-10 md:mb-0 p-5 flex flex-col overflow-x-hidden rounded-2xl overflow-y-auto",
             className
