@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import * as style from "../styles/fonts.module.css";
 import clsx from "clsx";
 import { SocialMedia } from "../common/components/social-media/SocialMedia";
+import { FiDownload } from 'react-icons/fi'
 
 export default function Home() {
   return (
@@ -45,6 +46,17 @@ export default function Home() {
       >
         Full Stack Developer
       </motion.div>
+
+      <motion.a
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.9 }}
+        className="mt-5 px-3 py-1 flex items-center gap-1 text-lg bg-sky-400 font-medium rounded-md cursor-pointer"
+        href="/assets/Sarath_Adhithya_Resume.pdf"
+        target="_blank"
+      >
+        <FiDownload className="w-5" />
+        Download Resume
+      </motion.a>
 
       <div className="mt-5 sm:mt-10 flex flex-col items-center gap-2 ">
         <SocialMedia />
