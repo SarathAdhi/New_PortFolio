@@ -23,15 +23,27 @@ const tabs = [
   },
 ];
 
-export default function Projects({ projectDatas }) {
+export default function Projects() {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
+  const [projects, setProjects] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState([]);
+
+  const getProjectsData = async () => {
+    const projectsQuery = '*[_type == "projects"]';
+    const response = await client.fetch(projectsQuery);
+    setProjects(response);
+    setFilteredProjects(response);
+  };
+
+  useEffect(() => {
+    getProjectsData();
+  }, []);
 
   useEffect(() => {
     if (selectedTab.label === "All") {
-      setFilteredProjects(projectDatas);
+      setFilteredProjects(projects);
     } else {
-      const filtered = projectDatas.filter((project) => {
+      const filtered = projects.filter((project) => {
         if (
           project.techstack
             .map((tech) => {
@@ -46,7 +58,7 @@ export default function Projects({ projectDatas }) {
 
       setFilteredProjects(filtered);
     }
-  }, [selectedTab, projectDatas]);
+  }, [selectedTab]);
 
   return (
     <PageLayout title="Projects" className="bg-[#5c4aff]">
@@ -89,13 +101,13 @@ export default function Projects({ projectDatas }) {
   );
 }
 
-export async function getServerSideProps() {
-  const projectsQuery = '*[_type == "projects"]';
-  const response = await client.fetch(projectsQuery);
+// export async function getServerSideProps() {
+//   const projectsQuery = '*[_type == "projects"]';
+//   const response = await client.fetch(projectsQuery);
 
-  return {
-    props: {
-      projectDatas: response,
-    },
-  };
-}
+//   return {
+//     props: {
+//       projectDatas: response,
+//     },
+//   };
+// }

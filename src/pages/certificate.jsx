@@ -37,12 +37,9 @@ export default function Certificate({ certificateDatas }) {
       </div>
 
       <PopupModal open={isModalOpen} setOpen={setIsModalOpen}>
-        <div className="scroll max-h-[500px] flex flex-col items-center justify-center overflow-y-auto">
-          <div className="absolute w-full  left-[45%] mt-10">
-            <LoadingSvg className="animate-spin w-16 text-black" />
-          </div>
+        <div className="scroll max-h-[500px] flex flex-col items-center justify-center rounded-xl overflow-y-auto">
           <img
-            className="w-full z-50 border-2 border-gray-600 rounded-xl"
+            className="w-full z-50 border-2 border-gray-600 rounded-xl bg-loading-pattern bg-center bg-[length:100px_100px] bg-no-repeat"
             src={urlFor(certificateImg)}
             alt="project-image"
           />
