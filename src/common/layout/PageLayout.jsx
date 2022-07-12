@@ -37,6 +37,7 @@ export const PageLayout = ({ title, className, children }) => {
         <meta name="author" content="Sarath Adhithya" />
         <meta name="theme-color" content="#2a14f7"></meta>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preload" as="image" href="/assets/me.png"></link>
       </Head>
       <main
         className={clsx(

@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "loading-pattern": "url('/assets/loading2.gif')",
+        "loading-pattern": "url('/assets/loading.gif')",
       },
       screens: {
         xs: "450px",

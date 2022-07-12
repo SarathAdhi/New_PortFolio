@@ -3,21 +3,32 @@ import { PageLayout } from "../common/layout/PageLayout";
 import { client } from "../client";
 import { motion } from "framer-motion";
 import AnimatedCard from "../common/components/AnimatedCard";
-import { BsFillGridFill } from "react-icons/bs";
 
 const tabs = [{ label: "All" }, { label: "Majority" }];
 
 const majority = ["ReactJS", "NextJS", "MongoDB", "Firebase"];
 
-export default function Skills({ skillsDatas }) {
+export default function Skills() {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
+  const [skills, setSkills] = useState([]);
   const [filteredSkills, setFilteredSkills] = useState([]);
+
+  const getSkillsData = async () => {
+    const skillsQuery = '*[_type == "skills"] | order(title, asc)';
+    const response = await client.fetch(skillsQuery);
+    setSkills(response);
+    setFilteredSkills(response);
+  };
+
+  useEffect(() => {
+    getSkillsData();
+  }, []);
 
   useEffect(() => {
     if (selectedTab.label === "All") {
-      setFilteredSkills(skillsDatas);
+      setFilteredSkills(skills);
     } else {
-      const filtered = skillsDatas.filter((project) => {
+      const filtered = skills.filter((project) => {
         if (majority.includes(project.name)) {
           return project;
         }
@@ -25,7 +36,7 @@ export default function Skills({ skillsDatas }) {
 
       setFilteredSkills(filtered);
     }
-  }, [selectedTab, skillsDatas]);
+  }, [selectedTab, skills]);
 
   return (
     <PageLayout title="Skills" className="bg-[#ecfef5]">
@@ -71,13 +82,13 @@ export default function Skills({ skillsDatas }) {
   );
 }
 
-export async function getServerSideProps() {
-  const skillsQuery = '*[_type == "skills"] | order(title, asc)';
-  const response = await client.fetch(skillsQuery);
+// export async function getServerSideProps() {
+//   const skillsQuery = '*[_type == "skills"] | order(title, asc)';
+//   const response = await client.fetch(skillsQuery);
 
-  return {
-    props: {
-      skillsDatas: response,
-    },
-  };
-}
+//   return {
+//     props: {
+//       skillsDatas: response,
+//     },
+//   };
+// }

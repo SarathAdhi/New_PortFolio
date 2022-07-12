@@ -60,6 +60,13 @@ export default function Projects() {
     }
   }, [selectedTab]);
 
+  if (projects.length === 0)
+    return (
+      <div className="h-screen flex justify-center items-center">
+        <img src="/assets/loading.gif" />
+      </div>
+    );
+
   return (
     <PageLayout title="Projects" className="bg-[#5c4aff]">
       <AnimatedCard

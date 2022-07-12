@@ -7,7 +7,7 @@ export const LinkTag = ({ href, className, image, children }) => {
   return (
     <Link href={href}>
       <a className={clsx("w-full flex justify-center items-center", className)}>
-        {image && <Image width={30} height={30} src={image} />}
+        {image && <Image priority={true} width={30} height={30} src={image} />}
         {children}
       </a>
     </Link>

@@ -52,7 +52,7 @@ export default function Home() {
         href="/assets/Sarath_Adhithya_Resume.pdf"
         target="_blank"
       >
-        <span className="absolute left-0 bottom-0 rounded-sm w-0 h-full bg-indigo-400 z-0 group-hover:w-full duration-300 group-hover:transition-all p-1"></span>
+        <span className="absolute left-0 bottom-0 rounded-sm w-0 h-full bg-indigo-400 z-0 group-hover:w-full duration-300 group-hover:transition-all p-0.5"></span>
         <span className="relative z-10 font-semibold flex items-center gap-2">
           <FiDownload className="w-5" />
           Download Resume
