@@ -3,26 +3,22 @@ import { PageLayout } from "../common/layout/PageLayout";
 import { client } from "../client";
 import { motion } from "framer-motion";
 import AnimatedCard from "../common/components/AnimatedCard";
+import { PageWrapper } from "../common/layout/PageWrapper";
 
 const tabs = [{ label: "All" }, { label: "Majority" }];
 
-const majority = ["ReactJS", "NextJS", "MongoDB", "Firebase"];
+const majority = [
+  "ReactJS",
+  "NextJS",
+  "MongoDB",
+  "Firebase",
+  "JavaScript",
+  "TypeScript",
+];
 
-export default function Skills() {
+export default function Skills({ skills }) {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
-  const [skills, setSkills] = useState([]);
   const [filteredSkills, setFilteredSkills] = useState([]);
-
-  const getSkillsData = async () => {
-    const skillsQuery = '*[_type == "skills"] | order(title, asc)';
-    const response = await client.fetch(skillsQuery);
-    setSkills(response);
-    setFilteredSkills(response);
-  };
-
-  useEffect(() => {
-    getSkillsData();
-  }, []);
 
   useEffect(() => {
     if (selectedTab.label === "All") {
@@ -37,6 +33,8 @@ export default function Skills() {
       setFilteredSkills(filtered);
     }
   }, [selectedTab, skills]);
+
+  if (!skills) return <PageWrapper></PageWrapper>;
 
   return (
     <PageLayout title="Skills" className="bg-[#ecfef5]">
@@ -82,13 +80,13 @@ export default function Skills() {
   );
 }
 
-// export async function getServerSideProps() {
-//   const skillsQuery = '*[_type == "skills"] | order(title, asc)';
-//   const response = await client.fetch(skillsQuery);
+export async function getServerSideProps() {
+  const skillsQuery = '*[_type == "skills"] | order(title, asc)';
+  const response = await client.fetch(skillsQuery);
 
-//   return {
-//     props: {
-//       skillsDatas: response,
-//     },
-//   };
-// }
+  return {
+    props: {
+      skills: response,
+    },
+  };
+}

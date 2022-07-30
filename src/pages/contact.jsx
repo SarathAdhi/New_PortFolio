@@ -25,7 +25,7 @@ export default function Contact() {
   const submitForm = (e) => {
     setIsLoading(true);
     e.preventDefault();
-    var templateParams = {
+    const templateParams = {
       from_name: fromName,
       from_email: fromEmail,
       message: message,

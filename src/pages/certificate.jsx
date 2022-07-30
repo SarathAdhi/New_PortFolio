@@ -4,28 +4,13 @@ import { client, urlFor } from "../client";
 import { motion } from "framer-motion";
 import { H2 } from "../common/components/elements/Text";
 import PopupModal from "../common/components/PopupModal";
+import { PageWrapper } from "../common/layout/PageWrapper";
 
-export default function Certificate() {
+export default function Certificate({ certificateDetails }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [certificateDetails, setCertificateDetails] = useState([]);
   const [certificateImg, setCertificateImg] = useState("");
 
-  const getProjectsData = async () => {
-    const certificatesQuery = '*[_type == "certificate"] | order(name, asc)';
-    const response = await client.fetch(certificatesQuery);
-    setCertificateDetails(response);
-  };
-
-  useEffect(() => {
-    getProjectsData();
-  }, []);
-
-  if (certificateDetails.length === 0)
-    return (
-      <div className="h-screen flex justify-center items-center">
-        <img src="/assets/loading.gif" />
-      </div>
-    );
+  if (!certificateDetails) return <PageWrapper></PageWrapper>;
 
   return (
     <PageLayout
@@ -72,7 +57,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      certificateDatas: response,
+      certificateDetails: response,
     },
   };
 }

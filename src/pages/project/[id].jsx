@@ -14,7 +14,7 @@ export default function DisplayProject({ projectData }) {
         <div className="w-full lg:w-1/2 border-black rounded-xl">
           <img
             src={urlFor(projectData.image)}
-            className="border-[2px] rounded-xl w-full bg-loading-pattern bg-center bg-[length:100px_100px] bg-no-repeat"
+            className="border-[2px] rounded-xl w-full bg-loading-pattern bg-center bg-[length:200px_200px] bg-no-repeat"
             alt={projectData.name}
           />
         </div>
@@ -58,7 +58,7 @@ export default function DisplayProject({ projectData }) {
           </div>
         </div>
       </div>
-      <H3 className="text-center !text-base md:text-xl md:px-16">
+      <H3 className="text-center !text-base md:!text-xl md:px-16">
         {projectData.about}
       </H3>
     </PageLayout>

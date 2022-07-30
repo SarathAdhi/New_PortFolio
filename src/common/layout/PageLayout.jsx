@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import clsx from "clsx";
 import { Context } from "../components/context/Context";
 import Navbar from "../components/navbar/Navbar";
+import { PageWrapper } from "./PageWrapper";
 
 const variants = {
   hidden: { opacity: 0, x: -200, y: 0 },
@@ -39,11 +40,7 @@ export const PageLayout = ({ title, className, children }) => {
         <link rel="icon" href="/favicon.ico" />
         <link rel="preload" as="image" href="/assets/me.png"></link>
       </Head>
-      <main
-        className={clsx(
-          "p-2 md:p-5 h-screen flex gap-4 overflow-hidden bg-black"
-        )}
-      >
+      <PageWrapper>
         <motion.div
           variants={isMobileDevice ? mobileVariant : variants}
           initial="hidden"
@@ -58,7 +55,7 @@ export const PageLayout = ({ title, className, children }) => {
           {children}
         </motion.div>
         <Navbar isMobileDevice={isMobileDevice} title={title} />
-      </main>
+      </PageWrapper>
     </>
   );
 };
