@@ -8,7 +8,7 @@ import { PageWrapper } from "../common/layout/PageWrapper";
 
 export default function Certificate({ certificateDetails }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [certificateImg, setCertificateImg] = useState("");
+  const [certificate, setCertificate] = useState("");
 
   if (!certificateDetails) return <PageWrapper></PageWrapper>;
 
@@ -28,7 +28,10 @@ export default function Certificate({ certificateDetails }) {
               className="bg-white px-4 py-2 m-2 text-center rounded-lg cursor-pointer"
               key={certificate._id}
               onClick={() => {
-                setCertificateImg(certificate.image);
+                setCertificate({
+                  title: certificate.name,
+                  image: certificate.image,
+                });
                 setIsModalOpen(true);
               }}
             >
@@ -38,11 +41,15 @@ export default function Certificate({ certificateDetails }) {
         })}
       </div>
 
-      <PopupModal open={isModalOpen} setOpen={setIsModalOpen}>
+      <PopupModal
+        title={certificate.title}
+        open={isModalOpen}
+        setOpen={setIsModalOpen}
+      >
         <div className="scroll max-h-[500px] flex flex-col items-center justify-center rounded-xl overflow-y-auto">
           <img
             className="w-full z-50 border-2 border-gray-600 rounded-xl bg-loading-pattern bg-center bg-[length:200px_200px] bg-no-repeat"
-            src={urlFor(certificateImg)}
+            src={urlFor(certificate.image)}
             alt="project-image"
           />
         </div>

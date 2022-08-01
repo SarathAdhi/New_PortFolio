@@ -19,7 +19,7 @@ export default function DisplayProject({ projectData }) {
           />
         </div>
         <div className="flex flex-col gap-5 md:gap-10">
-          <div className="flex gap-y-2 gap-x-5 flex-row justify-center flex-wrap">
+          <div className="flex gap-y-2 gap-x-10 flex-row justify-center flex-wrap">
             {projectData.techstack.map((tag, index) => {
               return (
                 <div
@@ -31,7 +31,7 @@ export default function DisplayProject({ projectData }) {
                     className="w-10 md:w-12"
                     alt={tag.fname}
                   />
-                  <H5>{tag.fname}</H5>
+                  <H5 className="font-semibold">{tag.fname}</H5>
                 </div>
               );
             })}
@@ -58,7 +58,7 @@ export default function DisplayProject({ projectData }) {
           </div>
         </div>
       </div>
-      <H3 className="text-center !text-base md:!text-xl md:px-16">
+      <H3 className="text-center font-semibold !text-base md:!text-xl md:px-16">
         {projectData.about}
       </H3>
     </PageLayout>
