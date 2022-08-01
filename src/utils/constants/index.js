@@ -1,3 +1,5 @@
+import { BsFillGridFill } from "react-icons/bs";
+
 export const companies = [
   {
     name: "Hushl",
@@ -19,4 +21,31 @@ export const companies = [
       "Inkredo is in the business of creating an infrastructure for credit risk assessment that helps financial institutions (FIs) create reliable risk assessment capabilities. Currently, we enable FIs to make sense of data from bank statements. We help FIs develop cognitive automation so that high-calibre talent can spend more quality on decision making and less on organising data and number crunching.",
     href: "https://home.inkredo.in/",
   },
+];
+
+export const projectTab = [
+  { icon: <BsFillGridFill className="w-4 md:w-6 text-white" />, label: "All" },
+  {
+    img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    label: "ReactJS",
+  },
+  {
+    img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg",
+    label: "NextJS",
+  },
+  {
+    img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    label: "NodeJS",
+  },
+];
+
+export const skillsTab = [{ label: "All" }, { label: "Majority" }];
+
+export const majority = [
+  "ReactJS",
+  "NextJS",
+  "MongoDB",
+  "Firebase",
+  "JavaScript",
+  "TypeScript",
 ];

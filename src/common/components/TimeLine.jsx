@@ -4,8 +4,11 @@ import { H2, H4 } from "./elements/Text";
 export const TimeLine = ({ options = [] }) => {
   return (
     <ol className="relative z-50 flex flex-col gap-10 border-l border-gray-200 dark:border-gray-700">
-      {options.map((option) => (
-        <li className="bg-black/20 p-3 -mt-1.5 rounded-xl text-left ml-6 flex flex-col gap-3 items-start">
+      {options.map((option, index) => (
+        <li
+          key={index}
+          className="bg-black/20 p-3 -mt-1.5 rounded-xl text-left ml-6 flex flex-col gap-3 items-start"
+        >
           <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-4 ring-black">
             <img className="w-full rounded-full" src={option.image} />
           </span>

@@ -4,20 +4,10 @@ import { client } from "../client";
 import { motion } from "framer-motion";
 import AnimatedCard from "../common/components/AnimatedCard";
 import { PageWrapper } from "../common/layout/PageWrapper";
-
-const tabs = [{ label: "All" }, { label: "Majority" }];
-
-const majority = [
-  "ReactJS",
-  "NextJS",
-  "MongoDB",
-  "Firebase",
-  "JavaScript",
-  "TypeScript",
-];
+import { majority, skillsTab } from "../utils/constants";
 
 export default function Skills({ skills }) {
-  const [selectedTab, setSelectedTab] = useState(tabs[0]);
+  const [selectedTab, setSelectedTab] = useState(skillsTab[0]);
   const [filteredSkills, setFilteredSkills] = useState([]);
 
   useEffect(() => {
@@ -39,7 +29,7 @@ export default function Skills({ skills }) {
   return (
     <PageLayout title="Skills" className="bg-[#ecfef5]">
       <AnimatedCard
-        tabs={tabs}
+        tabs={skillsTab}
         selectedTab={selectedTab}
         setSelectedTab={setSelectedTab}
         dark={true}

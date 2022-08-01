@@ -57,12 +57,13 @@ export default function Home() {
       </div>
 
       <div className="flex items-center">
-        <button
+        <motion.button
+          whileTap={{ scale: 0.9 }}
           className="bg-white/60 text-black font-semibold rounded-xl px-4 py-2"
           onClick={() => setIsOpenModal(true)}
         >
           Work History
-        </button>
+        </motion.button>
         <PopupModal
           title="Work History"
           open={isOpenModal}
@@ -74,12 +75,12 @@ export default function Home() {
 
       <div className="sm:mt-10 flex flex-col items-center gap-5">
         <a
-          className="relative group rounded-md py-2 px-3 border-2 border-indigo-900 bg-indigo-300 text-primary-900 font-medium"
+          className="relative group rounded-md py-2 px-3 border-2 border-indigo-900 duration-300 bg-indigo-300 text-primary-900 font-medium"
           href="/assets/Sarath_Adhithya_Resume.pdf"
           target="_blank"
         >
           <span className="absolute left-0 bottom-0 rounded-sm w-0 h-full bg-indigo-400 z-0 group-hover:w-full duration-300 group-hover:transition-all p-0.5"></span>
-          <span className="relative z-10 font-semibold flex items-center gap-2">
+          <span className="relative z-10 font-semibold flex items-center gap-2 duration-300 group-hover:text-white">
             <FiDownload className="w-5" />
             Download Resume
           </span>
