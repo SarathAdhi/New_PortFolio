@@ -14,7 +14,7 @@ export const TimeLine = ({ options = [] }) => {
           </span>
 
           <H2 className="flex items-center flex-wrap font-bold gap-2">
-            <a href={option.href} target="_blank">
+            <a href={option.href} target="_blank" rel="noreferrer">
               {option.name}
             </a>
             {option.isWorking && (
