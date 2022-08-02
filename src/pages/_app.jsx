@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ContextProvider } from "../common/components/context/Context";
 import "../styles/globals.css";

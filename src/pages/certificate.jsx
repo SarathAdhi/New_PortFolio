@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { PageLayout } from "../common/layout/PageLayout";
 import { client, urlFor } from "../client";
 import { motion } from "framer-motion";
