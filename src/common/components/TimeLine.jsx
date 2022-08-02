@@ -36,8 +36,9 @@ export const TimeLine = ({ options = [] }) => {
           </div>
           <a
             href={option.href}
-            target="_blank"
             className="inline-flex items-center py-2 px-3 text-sm text-white bg-indigo-600 rounded-lg"
+            target="_blank"
+            rel="noreferrer"
           >
             Visit
           </a>
