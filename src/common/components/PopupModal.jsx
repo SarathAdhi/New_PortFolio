@@ -18,7 +18,7 @@ export default function PopupModal({ title, open, setOpen, children }) {
         </Transition.Child>
 
         <div className="fixed z-10 inset-0 overflow-y-auto">
-          <div className="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
+          <div className="flex items-end sm:items-center justify-center min-h-full p-4 text-center">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -38,7 +38,8 @@ export default function PopupModal({ title, open, setOpen, children }) {
                       >
                         {title}
                       </Dialog.Title>
-                      <div className="mt-10 text-sm text-gray-500">
+
+                      <div className="mt-5 max-h-[65vh] overflow-y-auto rounded-lg p-5 text-sm text-gray-500">
                         {children}
                       </div>
                     </div>

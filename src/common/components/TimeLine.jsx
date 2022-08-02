@@ -7,32 +7,37 @@ export const TimeLine = ({ options = [] }) => {
       {options.map((option, index) => (
         <li
           key={index}
-          className="bg-black/20 p-3 -mt-1.5 rounded-xl text-left ml-6 flex flex-col gap-3 items-start"
+          className="bg-black/20 p-3 -mt-3 rounded-xl text-left ml-6 flex flex-col gap-3 items-start"
         >
           <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-4 ring-black">
             <img className="w-full rounded-full" src={option.image} />
           </span>
 
           <H2 className="flex items-center flex-wrap font-bold gap-2">
-            <span>{option.name}</span>
+            <a href={option.href} target="_blank">
+              {option.name}
+            </a>
             {option.isWorking && (
               <span className="bg-blue-100 text-blue-900 text-sm font-medium px-2.5 py-0.5 rounded ">
-                Currently Working
+                Working
               </span>
             )}
           </H2>
 
           <div className="flex flex-col gap-2">
-            <time className="text-sm text-black">{option.time}</time>
+            <time className="text-sm text-black font-semibold">
+              {option.time}
+            </time>
             {/* <time className="text-sm">Released on January 13th, 2022</time> */}
 
-            <H4 className="bg-white/50 p-2 rounded-lg font-semibold">
+            <H4 className="md:bg-white/50 md:p-2 !text-sm md:!text-lg rounded-lg md:font-semibold">
               {option.about}
             </H4>
           </div>
           <a
             href={option.href}
-            className="inline-flex items-center py-2 px-4 text-sm text-white bg-indigo-600 rounded-3xl"
+            target="_blank"
+            className="inline-flex items-center py-2 px-3 text-sm text-white bg-indigo-600 rounded-lg"
           >
             Visit
           </a>

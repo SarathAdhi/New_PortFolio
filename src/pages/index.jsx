@@ -64,6 +64,7 @@ export default function Home() {
         >
           Work History
         </motion.button>
+
         <PopupModal
           title="Work History"
           open={isOpenModal}
