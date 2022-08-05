@@ -7,7 +7,7 @@ import { BsGithub, BsGlobe2 } from "react-icons/bs";
 export default function DisplayProject({ projectData }) {
   return (
     <PageLayout
-      title={projectData.name}
+      title={projectData.name + " | Sarath"}
       className="bg-white py-10 lg:py-20 items-center gap-5 md:gap-10"
     >
       <div className="flex justify-around items-center flex-wrap gap-10">

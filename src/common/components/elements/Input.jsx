@@ -8,6 +8,7 @@ export const Input = ({
   className,
   value,
   onChange,
+  ...inputProps
 }) => {
   return (
     <div className="flex flex-col w-full">
@@ -21,6 +22,7 @@ export const Input = ({
         value={value}
         placeholder={placeholder}
         onChange={onChange}
+        {...inputProps}
       />
     </div>
   );

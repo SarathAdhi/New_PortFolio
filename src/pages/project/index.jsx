@@ -47,7 +47,7 @@ export default function Projects() {
   if (!projects) return <PageWrapper></PageWrapper>;
 
   return (
-    <PageLayout title="Projects" className="bg-[#5c4aff]">
+    <PageLayout title="Projects | Sarath" className="bg-[#5c4aff]">
       <AnimatedCard
         tabs={projectTab}
         selectedTab={selectedTab}
