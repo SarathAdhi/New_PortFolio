@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <PageLayout
-      title="About | Sarath"
+      title="About"
       className="relative gap-10 bg-[#ECB365] pt-40 sm:pt-0 sm:justify-center items-center text-center !overflow-hidden"
     >
       <div className="flex flex-col items-center">

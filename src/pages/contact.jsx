@@ -52,7 +52,7 @@ export default function Contact() {
 
   return (
     <PageLayout
-      title="Contact | Sarath"
+      title="Contact"
       className="bg-[#d6d271] justify-center items-center"
     >
       <form

@@ -14,7 +14,7 @@ export default function Certificate({ certificateDetails }) {
 
   return (
     <PageLayout
-      title="Certificates | Sarath"
+      title="Certificates"
       className="bg-[#03506F] justify-center items-center pt-10"
     >
       <div className="flex justify-center flex-wrap">

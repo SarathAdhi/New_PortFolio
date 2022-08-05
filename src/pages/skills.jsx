@@ -27,7 +27,7 @@ export default function Skills({ skills }) {
   if (!skills) return <PageWrapper></PageWrapper>;
 
   return (
-    <PageLayout title="Skills | Sarath" className="bg-[#ecfef5]">
+    <PageLayout title="Skills" className="bg-[#ecfef5]">
       <AnimatedCard
         tabs={skillsTab}
         selectedTab={selectedTab}
