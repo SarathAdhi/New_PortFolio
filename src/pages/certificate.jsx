@@ -46,13 +46,11 @@ export default function Certificate({ certificateDetails }) {
         open={isModalOpen}
         setOpen={setIsModalOpen}
       >
-        <div className="scroll max-h-[500px] flex flex-col items-center justify-center rounded-xl overflow-y-auto">
-          <img
-            className="w-full z-50 border-2 border-gray-600 rounded-xl bg-loading-pattern bg-center bg-[length:200px_200px] bg-no-repeat"
-            src={urlFor(certificate.image)}
-            alt="project-image"
-          />
-        </div>
+        <img
+          className="w-full h-full z-50 border-2 border-gray-600 rounded-xl bg-loading-pattern bg-center bg-[length:200px_200px] bg-no-repeat"
+          src={urlFor(certificate.image)}
+          alt="project-image"
+        />
       </PopupModal>
     </PageLayout>
   );

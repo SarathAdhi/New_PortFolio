@@ -6,9 +6,21 @@ import AnimatedCard from "../common/components/AnimatedCard";
 import { PageWrapper } from "../common/layout/PageWrapper";
 import { majority, skillsTab } from "../utils/constants";
 
-export default function Skills({ skills }) {
+export default function Skills() {
   const [selectedTab, setSelectedTab] = useState(skillsTab[0]);
   const [filteredSkills, setFilteredSkills] = useState([]);
+
+  const [skills, setSkills] = useState([]);
+  const getSkillsData = async () => {
+    const skillsQuery = '*[_type == "skills"] | order(title, asc)';
+    const response = await client.fetch(skillsQuery);
+    setSkills(response);
+    setFilteredSkills(response);
+  };
+
+  useEffect(() => {
+    getSkillsData();
+  }, []);
 
   useEffect(() => {
     if (selectedTab.label === "All") {
@@ -70,13 +82,13 @@ export default function Skills({ skills }) {
   );
 }
 
-export async function getServerSideProps() {
-  const skillsQuery = '*[_type == "skills"] | order(title, asc)';
-  const response = await client.fetch(skillsQuery);
+// export async function getServerSideProps() {
+//   const skillsQuery = '*[_type == "skills"] | order(title, asc)';
+//   const response = await client.fetch(skillsQuery);
 
-  return {
-    props: {
-      skills: response,
-    },
-  };
-}
+//   return {
+//     props: {
+//       skills: response,
+//     },
+//   };
+// }

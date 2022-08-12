@@ -3,6 +3,7 @@ import { client, urlFor } from "../../client";
 import { PageLayout } from "../../common/layout/PageLayout";
 import { H3, H5 } from "../../common/components/elements/Text";
 import { BsGithub, BsGlobe2 } from "react-icons/bs";
+import { LinkTag } from "../../common/components/elements/LinkTag";
 
 export default function DisplayProject({ projectData }) {
   return (

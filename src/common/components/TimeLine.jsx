@@ -34,14 +34,16 @@ export const TimeLine = ({ options = [] }) => {
               {option.about}
             </H4>
           </div>
-          <a
-            href={option.href}
-            className="inline-flex items-center py-2 px-3 text-sm text-white bg-indigo-600 rounded-lg"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Visit
-          </a>
+          <div className="flex w-full items-end justify-end ">
+            <a
+              href={option.href}
+              className="inline-flex items-center justify-center py-1 px-2 text-sm text-white bg-indigo-600 rounded-lg"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Visit
+            </a>
+          </div>
         </li>
       ))}
     </ol>
