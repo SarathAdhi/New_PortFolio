@@ -19,7 +19,7 @@ export const TimeLine = ({ options = [] }) => {
             </a>
             {option.isWorking && (
               <span className="bg-blue-100 text-blue-900 text-sm font-medium px-2.5 py-0.5 rounded ">
-                Working
+                Currently Working
               </span>
             )}
           </H2>

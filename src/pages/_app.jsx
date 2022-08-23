@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
 
   if (isLoading)
     return (
-      <div className="flex items-center justify-center h-screen">
+      <div className="flex items-center justify-center h-screen bg-[#fdfdfd]">
         <img className="w-96" src="/assets/loading.gif" />
       </div>
     );

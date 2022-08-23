@@ -52,7 +52,7 @@ export default function Projects() {
         tabs={projectTab}
         selectedTab={selectedTab}
         setSelectedTab={setSelectedTab}
-        className="flex justify-center flex-wrap mt-5 gap-5"
+        className="flex justify-center flex-wrap mt-5 gap-5 md:gap-10"
       >
         {isProjectsLoaded ? (
           filteredProjects.map((project, index) => {
