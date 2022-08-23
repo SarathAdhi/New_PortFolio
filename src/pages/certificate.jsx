@@ -7,6 +7,7 @@ import "react-image-gallery/styles/css/image-gallery.css";
 
 export default function Certificate() {
   const [certificateDetails, setCertificateDetails] = useState([]);
+
   const getCertificatesData = async () => {
     const certificatesQuery = '*[_type == "certificate"] | order(name, asc)';
     const response = await client.fetch(certificatesQuery);
@@ -24,6 +25,8 @@ export default function Certificate() {
       original: urlFor(image).url(),
       thumbnail: urlFor(image).url(),
       description: name,
+      loading: "eager",
+      thumbnailLoading: "eager",
     };
   });
 

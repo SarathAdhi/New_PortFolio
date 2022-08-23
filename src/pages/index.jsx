@@ -96,6 +96,7 @@ export default function Home() {
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
           alt="react"
         />
+
         <img
           className="-scale-x-90"
           src="/assets/me.png"

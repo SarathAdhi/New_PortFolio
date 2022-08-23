@@ -39,7 +39,7 @@ export default function Contact() {
         "UUgSZVl6GSqMszEY_"
       )
       .then(
-        function (response) {
+        function () {
           toast.success("Hey, thanks for your response.");
           setIsLoading(false);
         },

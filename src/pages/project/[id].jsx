@@ -4,7 +4,6 @@ import { PageLayout } from "../../common/layout/PageLayout";
 import { H1, H3, H5 } from "../../common/components/elements/Text";
 import { BsGithub, BsGlobe2 } from "react-icons/bs";
 import { useRouter } from "next/router";
-import clsx from "clsx";
 
 export default function DisplayProject() {
   const { id } = useRouter().query;

@@ -11,6 +11,7 @@ export default function Skills() {
   const [filteredSkills, setFilteredSkills] = useState([]);
 
   const [skills, setSkills] = useState([]);
+
   const getSkillsData = async () => {
     const skillsQuery = '*[_type == "skills"] | order(title, asc)';
     const response = await client.fetch(skillsQuery);
