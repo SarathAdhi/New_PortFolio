@@ -37,8 +37,8 @@ export const projectTab = [
     label: "NextJS",
   },
   {
-    img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-    label: "NodeJS",
+    img: "https://www.svgrepo.com/show/200102/bold-letter-b.svg",
+    label: "Blockchain",
   },
 ];
 

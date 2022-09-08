@@ -26,6 +26,26 @@ export default function Projects() {
   useEffect(() => {
     if (selectedTab.label === "All") {
       setFilteredProjects(projects);
+    } else if (selectedTab.label === "Blockchain") {
+      const filtered = projects.filter((project) => {
+        if (
+          project.techstack
+            .map((tech) => {
+              if (
+                tech.fname === "EthersJS" ||
+                tech.fname === "Solidity" ||
+                tech.fname === "Truffle"
+              )
+                return true;
+              return "";
+            })
+            .includes(true)
+        ) {
+          return project;
+        } else return "";
+      });
+
+      setFilteredProjects(filtered);
     } else {
       const filtered = projects.filter((project) => {
         if (
