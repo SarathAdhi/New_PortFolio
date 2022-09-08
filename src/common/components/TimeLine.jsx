@@ -1,5 +1,6 @@
 import React from "react";
 import { H2, H4 } from "./elements/Text";
+import { motion } from "framer-motion";
 
 export const TimeLine = ({ options = [] }) => {
   return (
@@ -28,21 +29,35 @@ export const TimeLine = ({ options = [] }) => {
             <time className="text-sm text-black font-semibold">
               {option.time}
             </time>
-            {/* <time className="text-sm">Released on January 13th, 2022</time> */}
 
             <H4 className="md:bg-white/50 md:p-2 !text-sm md:!text-lg rounded-lg md:font-semibold">
               {option.about}
             </H4>
           </div>
-          <div className="flex w-full items-end justify-end ">
-            <a
+          <div className="flex w-full items-end justify-end gap-3">
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 1 }}
               href={option.href}
-              className="inline-flex items-center justify-center py-1 px-2 text-sm text-white bg-indigo-600 rounded-lg"
+              className="inline-flex items-center justify-center py-1 px-2 text-base text-white font-semibold bg-indigo-600 rounded-lg"
               target="_blank"
               rel="noreferrer"
             >
               Visit
-            </a>
+            </motion.a>
+
+            {option.experienceLetter && (
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 1 }}
+                href={option.experienceLetter}
+                className="inline-flex items-center justify-center py-1 px-2 text-base font-semibold text-black bg-white rounded-lg"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Experience Letter
+              </motion.a>
+            )}
           </div>
         </li>
       ))}
