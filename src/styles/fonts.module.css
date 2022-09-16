@@ -5,3 +5,7 @@
 .Monbold {
   font-family: "Montserrat", sans-serif;
 }
+
+.vertical {
+  writing-mode: vertical-lr;
+}

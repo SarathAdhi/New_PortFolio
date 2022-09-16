@@ -42,8 +42,9 @@ const Navbar = ({ isMobileDevice, title }) => {
 
       <H2
         className={clsx(
-          "hidden md:block !text-white -rotate-90 pl-2",
-          style.Monbold
+          "hidden md:block !text-white -rotate-180 pl-2",
+          style.Monbold,
+          style.vertical
         )}
       >
         {title}

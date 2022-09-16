@@ -21,7 +21,7 @@ const mobileVariant = {
 export const PageLayout = ({ title, className, children }) => {
   const { _isMobile } = useContext(Context);
 
-  const [isMobileDevice, setIsMobileDevice] = _isMobile;
+  const [isMobileDevice] = _isMobile;
 
   return (
     <>
@@ -54,6 +54,7 @@ export const PageLayout = ({ title, className, children }) => {
         >
           {children}
         </motion.div>
+
         <Navbar isMobileDevice={isMobileDevice} title={title} />
       </PageWrapper>
     </>
