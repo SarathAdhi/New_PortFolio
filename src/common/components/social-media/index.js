@@ -24,4 +24,9 @@ export const socialMediaHandles = [
     link: "mailto://s.sarathadhithya@gmail.com",
     image: "/assets/social-media/gmail.png",
   },
+  {
+    name: "Medium",
+    link: "https://sarathadhithya.medium.com/",
+    image: "/assets/social-media/medium.png",
+  },
 ];

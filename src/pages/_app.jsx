@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import { ContextProvider } from "../common/components/context/Context";
+import dynamic from "next/dynamic";
+const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
+  ssr: false,
+});
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
@@ -17,6 +21,15 @@ function MyApp({ Component, pageProps }) {
     );
   return (
     <ContextProvider>
+      <AnimatedCursor
+        innerSize={8}
+        outerSize={8}
+        color="193, 11, 111"
+        outerAlpha={0.2}
+        innerScale={0.7}
+        outerScale={5}
+      />
+
       <Component {...pageProps} />
     </ContextProvider>
   );

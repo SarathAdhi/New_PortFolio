@@ -56,7 +56,7 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <div className="flex items-center">
+      <div className="sm:mt-5 flex items-center">
         <motion.button
           whileTap={{ scale: 0.9 }}
           whileHover={{ scale: 1.05 }}
@@ -75,7 +75,7 @@ export default function Home() {
         </PopupModal>
       </div>
 
-      <div className="sm:mt-10 flex flex-col items-center gap-5">
+      <div className="sm:mt-5 flex flex-col items-center gap-5">
         <a
           className="relative group rounded-md py-2 px-3 border-2 border-indigo-900 duration-300 bg-indigo-300 text-primary-900 font-medium"
           href="/assets/Sarath_Adhithya_Resume.pdf"

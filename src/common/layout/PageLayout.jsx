@@ -40,6 +40,7 @@ export const PageLayout = ({ title, className, children }) => {
         <link rel="icon" href="/favicon.ico" />
         <link rel="preload" as="image" href="/assets/me.png"></link>
       </Head>
+
       <PageWrapper>
         <motion.div
           variants={isMobileDevice ? mobileVariant : variants}

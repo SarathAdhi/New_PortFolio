@@ -11,7 +11,11 @@ export const TimeLine = ({ options = [] }) => {
           className="bg-black/20 p-3 -mt-3 rounded-xl text-left ml-6 flex flex-col gap-3 items-start"
         >
           <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-4 ring-black">
-            <img className="w-full rounded-full" src={option.image} />
+            <img
+              className="w-full rounded-full"
+              src={option.image}
+              referrerPolicy={"no-referrer"}
+            />
           </span>
 
           <H2 className="flex items-center flex-wrap font-bold gap-2">
@@ -46,16 +50,16 @@ export const TimeLine = ({ options = [] }) => {
               Visit
             </motion.a>
 
-            {option.experienceLetter && (
+            {option.completionCertificate && (
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 1 }}
-                href={option.experienceLetter}
+                href={option.completionCertificate}
                 className="inline-flex items-center justify-center py-1 px-2 text-base font-semibold text-black bg-white rounded-lg"
                 target="_blank"
                 rel="noreferrer"
               >
-                Experience Letter
+                Completion Certificate
               </motion.a>
             )}
           </div>
