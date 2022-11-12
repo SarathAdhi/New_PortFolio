@@ -8,7 +8,7 @@ export const companies = [
     time: "July 22nd, 2022 - September 10th, 2022",
     about:
       "Hushl is a creator platform for professionals to create content, teach skills in micro communities and launch side projects. Professionals from across different sectors don't participate in the creator economy: a lack of time, and limited tools and resources prevent them from fully participating in it.",
-    href: "https://home.inkredo.in/",
+    href: "https://hushl.in/",
     completionCertificate:
       "https://drive.google.com/file/d/1mP9fGpWb6o7Kf2WLfCJ11eIwSKvXT7ve/view?usp=sharing",
   },
