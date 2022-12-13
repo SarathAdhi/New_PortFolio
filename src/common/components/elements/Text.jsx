@@ -9,8 +9,12 @@ export const H2 = ({ className, children }) => {
   return <h2 className={clsx("text-black text-2xl", className)}>{children}</h2>;
 };
 
-export const H3 = ({ className, children }) => {
-  return <h3 className={clsx("text-black text-xl", className)}>{children}</h3>;
+export const H3 = ({ className, children, ...rest }) => {
+  return (
+    <h3 className={clsx("text-black text-xl", className)} {...rest}>
+      {children}
+    </h3>
+  );
 };
 
 export const H4 = ({ className, children }) => {

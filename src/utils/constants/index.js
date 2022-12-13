@@ -28,12 +28,12 @@ export const companies = [
 export const projectTab = [
   { icon: <BsFillGridFill className="w-4 md:w-6 text-white" />, label: "All" },
   {
-    img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-    label: "ReactJS",
+    img: "/assets/star.png",
+    label: "Stared",
   },
   {
-    img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg",
-    label: "NextJS",
+    img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    label: "ReactJS",
   },
   {
     img: "https://www.svgrepo.com/show/200102/bold-letter-b.svg",

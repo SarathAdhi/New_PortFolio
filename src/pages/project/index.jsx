@@ -13,7 +13,7 @@ export default function Projects() {
   const [projects, setProjects] = useState([]);
 
   const getProjectsData = async () => {
-    const projectsQuery = '*[_type == "projects"]';
+    const projectsQuery = '*[_type == "projects"] | order(_createdAt desc)';
     const response = await client.fetch(projectsQuery);
     setProjects(response);
     setFilteredProjects(response);
@@ -26,43 +26,57 @@ export default function Projects() {
   useEffect(() => {
     if (selectedTab.label === "All") {
       setFilteredProjects(projects);
-    } else if (selectedTab.label === "Blockchain") {
-      const filtered = projects.filter((project) => {
-        if (
-          project.techstack
-            .map((tech) => {
-              if (
-                tech.fname === "EthersJS" ||
-                tech.fname === "Solidity" ||
-                tech.fname === "Truffle"
-              )
-                return true;
-              return "";
-            })
-            .includes(true)
-        ) {
-          return project;
-        } else return "";
-      });
 
-      setFilteredProjects(filtered);
-    } else {
-      const filtered = projects.filter((project) => {
-        if (
-          project.techstack
-            .map((tech) => {
-              if (tech.fname === selectedTab.label) return true;
-              return "";
-            })
-            .includes(true)
-        ) {
-          return project;
-        } else return "";
-      });
-
-      setFilteredProjects(filtered);
+      return;
     }
+
+    if (selectedTab.label === "Stared") {
+      const filtered = projects.filter(({ stared }) => stared);
+      setFilteredProjects(filtered);
+
+      return;
+    }
+
+    if (selectedTab.label === "Blockchain") {
+      const filtered = projects.filter((project) => {
+        const isBlockchainProject = project.techstack
+          .map((tech) => {
+            if (
+              tech.fname === "EthersJS" ||
+              tech.fname === "Solidity" ||
+              tech.fname === "Truffle"
+            )
+              return true;
+            return "";
+          })
+          .includes(true);
+
+        if (isBlockchainProject) return project;
+        return "";
+      });
+
+      setFilteredProjects(filtered);
+
+      return;
+    }
+    const filtered = projects.filter((project) => {
+      if (
+        project.techstack
+          .map((tech) => {
+            if (tech.fname === selectedTab.label || tech.fname === "NextJS")
+              return true;
+            return "";
+          })
+          .includes(true)
+      ) {
+        return project;
+      } else return "";
+    });
+
+    setFilteredProjects(filtered);
   }, [selectedTab]);
+
+  console.log({ projects });
 
   const isProjectsLoaded = filteredProjects.length > 0;
 

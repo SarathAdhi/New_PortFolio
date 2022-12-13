@@ -45,11 +45,11 @@ export default function DisplayProject() {
               return (
                 <div
                   key={tag.fname}
-                  className="group flex flex-col items-center justify-center"
+                  className="group flex flex-col items-center justify-center gap-2"
                 >
                   <img
                     src={tag.fimage}
-                    className="group-hover:scale-110 duration-200 w-10 md:w-12"
+                    className="group-hover:scale-110 group-active:scale-95  duration-200 w-10 md:w-12"
                     alt={tag.fname}
                   />
                   <H5 className="font-semibold">{tag.fname}</H5>
@@ -79,9 +79,11 @@ export default function DisplayProject() {
           </div>
         </div>
       </div>
-      <H3 className="text-center font-semibold !text-base md:!text-xl md:px-16">
-        {projectData.about}
-      </H3>
+
+      <H3
+        className="text-center font-semibold !text-base md:!text-xl md:px-16"
+        dangerouslySetInnerHTML={{ __html: projectData.about }}
+      ></H3>
     </PageLayout>
   );
 }
