@@ -51,4 +51,6 @@ export const majority = [
   "JavaScript",
   "TypeScript",
   "Solidity",
+  "Tailwind CSS",
+  "MaterialUI",
 ];

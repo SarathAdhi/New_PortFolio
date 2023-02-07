@@ -23,8 +23,6 @@ export default function DisplayProject() {
 
   if (!projectData) return <PageLayout></PageLayout>;
 
-  console.log(projectData);
-
   return (
     <PageLayout
       title={"Project - " + projectData.name}

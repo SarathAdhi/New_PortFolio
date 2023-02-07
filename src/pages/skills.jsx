@@ -5,9 +5,20 @@ import { motion } from "framer-motion";
 import AnimatedCard from "../common/components/AnimatedCard";
 import { PageWrapper } from "../common/layout/PageWrapper";
 import { majority, skillsTab } from "../utils/constants";
+import { useRouter } from "next/router";
 
 export default function Skills() {
-  const [selectedTab, setSelectedTab] = useState(skillsTab[0]);
+  const router = useRouter();
+
+  const tab = router.query.tab;
+
+  const currentTab = skillsTab.find(
+    ({ label }) => tab === label.toLocaleLowerCase()
+  );
+
+  const [selectedTab, setSelectedTab] = useState(
+    currentTab ? currentTab : skillsTab[0]
+  );
   const [filteredSkills, setFilteredSkills] = useState([]);
 
   const [skills, setSkills] = useState([]);
@@ -24,6 +35,8 @@ export default function Skills() {
   }, []);
 
   useEffect(() => {
+    router.replace(`/skills?tab=${selectedTab.label.toLowerCase()}`);
+
     if (selectedTab.label === "All") {
       setFilteredSkills(skills);
     } else {
@@ -64,6 +77,7 @@ export default function Skills() {
                     {skill.title}
                   </p>
                 </div>
+
                 <div className="__skills_img">
                   <motion.img
                     loading="lazy"

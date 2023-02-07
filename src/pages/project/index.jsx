@@ -6,9 +6,20 @@ import { motion } from "framer-motion";
 import { ProjectCard } from "../../common/components/ProjectCard";
 import { projectTab } from "../../utils/constants";
 import { LoadingSvg } from "../../common/components/LoadingSvg";
+import { useRouter } from "next/router";
 
 export default function Projects() {
-  const [selectedTab, setSelectedTab] = useState(projectTab[0]);
+  const router = useRouter();
+
+  const tab = router.query.tab;
+
+  const currentTab = projectTab.find(
+    ({ label }) => tab === label.toLocaleLowerCase()
+  );
+
+  const [selectedTab, setSelectedTab] = useState(
+    currentTab ? currentTab : projectTab[0]
+  );
   const [filteredProjects, setFilteredProjects] = useState([]);
   const [projects, setProjects] = useState([]);
 
@@ -16,7 +27,6 @@ export default function Projects() {
     const projectsQuery = '*[_type == "projects"] | order(_createdAt desc)';
     const response = await client.fetch(projectsQuery);
     setProjects(response);
-    setFilteredProjects(response);
   };
 
   useEffect(() => {
@@ -24,6 +34,8 @@ export default function Projects() {
   }, []);
 
   useEffect(() => {
+    router.replace(`/project?tab=${selectedTab.label.toLowerCase()}`);
+
     if (selectedTab.label === "All") {
       setFilteredProjects(projects);
 
@@ -38,45 +50,28 @@ export default function Projects() {
     }
 
     if (selectedTab.label === "Blockchain") {
-      const filtered = projects.filter((project) => {
-        const isBlockchainProject = project.techstack
-          .map((tech) => {
-            if (
-              tech.fname === "EthersJS" ||
-              tech.fname === "Solidity" ||
-              tech.fname === "Truffle"
-            )
-              return true;
-            return "";
-          })
-          .includes(true);
-
-        if (isBlockchainProject) return project;
-        return "";
-      });
+      const filtered = projects.filter((project) =>
+        project.techstack.find(
+          (tech) =>
+            tech.fname === "EthersJS" ||
+            tech.fname === "Solidity" ||
+            tech.fname === "Truffle"
+        )
+      );
 
       setFilteredProjects(filtered);
 
       return;
     }
-    const filtered = projects.filter((project) => {
-      if (
-        project.techstack
-          .map((tech) => {
-            if (tech.fname === selectedTab.label || tech.fname === "NextJS")
-              return true;
-            return "";
-          })
-          .includes(true)
-      ) {
-        return project;
-      } else return "";
-    });
+
+    const filtered = projects.filter((project) =>
+      project.techstack.find(
+        (tech) => tech.fname === selectedTab.label || tech.fname === "NextJS"
+      )
+    );
 
     setFilteredProjects(filtered);
-  }, [selectedTab]);
-
-  console.log({ projects });
+  }, [selectedTab, projects]);
 
   const isProjectsLoaded = filteredProjects.length > 0;
 
