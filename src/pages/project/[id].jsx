@@ -26,7 +26,7 @@ export default function DisplayProject() {
   return (
     <PageLayout
       title={"Project - " + projectData.name}
-      className="bg-white py-10 lg:py-20 justify-center items-center gap-5 md:gap-10"
+      className="bg-white py-10 lg:py-20 items-center gap-5 md:gap-10"
     >
       <H1 className="font-bold text-center italic">{projectData.name}</H1>
       <div className="flex justify-around items-center flex-wrap gap-10">
@@ -62,13 +62,13 @@ export default function DisplayProject() {
                 className="font-semibold flex items-center gap-2 text-lg p-1 md:px-3 md:py-2 border-[3px] rounded-lg border-indigo-500 duration-200 hover:rounded-3xl"
               >
                 <BsGlobe2 className="text-2xl" />
-                Demo
+                Visit
               </a>
             )}
             {projectData.github && (
               <a
                 href={projectData.github}
-                className="font-semibold flex items-center text-lg gap-1 p-1 md:px-3 sm:py-2 border-[3px] rounded-lg border-gray-500 duration-200 hover:rounded-3xl"
+                className="font-semibold flex items-center text-lg gap-2 p-1 md:px-3 sm:py-2 border-[3px] rounded-lg border-gray-500 duration-200 hover:rounded-3xl"
               >
                 <BsGithub className="text-2xl" />
                 Github
