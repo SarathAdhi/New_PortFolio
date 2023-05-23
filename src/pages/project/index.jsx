@@ -42,7 +42,7 @@ export default function Projects() {
       return;
     }
 
-    if (selectedTab.label === "Stared") {
+    if (selectedTab.label === "Starred") {
       const filtered = projects.filter(({ stared }) => stared);
       setFilteredProjects(filtered);
 

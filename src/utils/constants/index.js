@@ -2,6 +2,16 @@ import { BsFillGridFill } from "react-icons/bs";
 
 export const companies = [
   {
+    name: "VIT - Chennai",
+    isWorking: false,
+    image: "/assets/work-history/vit.png",
+    time: "October 1st, 2022 - March 1st, 2023",
+    about:
+      "I helped my college completely to optimize, automate and redesign the faculties page and created an Admin panel with two different roles. In the admin panel, the admin can add, view, update, and approve faculties and the faculty can update their information. All the updated information will be shown on the faculties page only if the admin approves, else it will be saved in the draft DB until the admin approves.",
+    href: "",
+    completionCertificate: "",
+  },
+  {
     name: "Hushl",
     isWorking: false,
     image: "/assets/work-history/hushl.jpg",
@@ -29,7 +39,7 @@ export const projectTab = [
   { icon: <BsFillGridFill className="w-4 md:w-6 text-white" />, label: "All" },
   {
     img: "/assets/star.png",
-    label: "Stared",
+    label: "Starred",
   },
   {
     img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",

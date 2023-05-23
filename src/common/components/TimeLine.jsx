@@ -39,16 +39,18 @@ export const TimeLine = ({ options = [] }) => {
             </H4>
           </div>
           <div className="flex w-full items-end justify-end gap-3">
-            <motion.a
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 1 }}
-              href={option.href}
-              className="inline-flex items-center justify-center py-1 px-2 text-base text-white font-semibold bg-indigo-600 rounded-lg"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Visit
-            </motion.a>
+            {option.href && (
+              <motion.a
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 1 }}
+                href={option.href}
+                className="inline-flex items-center justify-center py-1 px-2 text-base text-white font-semibold bg-indigo-600 rounded-lg"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Visit
+              </motion.a>
+            )}
 
             {option.completionCertificate && (
               <motion.a
@@ -59,7 +61,7 @@ export const TimeLine = ({ options = [] }) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                Completion Certificate
+                Certificate
               </motion.a>
             )}
           </div>
