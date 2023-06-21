@@ -5,9 +5,12 @@ import dynamic from "next/dynamic";
 //   ssr: false,
 // });
 import "../styles/globals.css";
+import PopupModal from "../common/components/PopupModal";
+import Link from "next/link";
 
 function MyApp({ Component, pageProps }) {
   const [isLoading, setIsLoading] = useState(true);
+  const [isModelOpen, setIsModelOpen] = useState(true);
 
   useEffect(() => {
     setTimeout(() => setIsLoading(false), 1000);
@@ -21,16 +24,26 @@ function MyApp({ Component, pageProps }) {
     );
   return (
     <ContextProvider>
-      {/* <AnimatedCursor
-        innerSize={8}
-        outerSize={8}
-        color="193, 11, 111"
-        outerAlpha={0.2}
-        innerScale={0.7}
-        outerScale={5}
-      /> */}
-
       <Component {...pageProps} />
+
+      <PopupModal
+        title="Check out my New Portfolio 2023"
+        open={isModelOpen}
+        setOpen={setIsModelOpen}
+      >
+        <div className="flex flex-col items-center gap-4">
+          <img
+            className="w-full h-full rounded-md"
+            src="/assets/new-portfolio.png"
+          />
+
+          <Link href="https://www.sarathadhi.me/">
+            <span className="text-blue-700 underline text-center !text-xl font-semibold">
+              Portfolio 2023
+            </span>
+          </Link>
+        </div>
+      </PopupModal>
     </ContextProvider>
   );
 }
