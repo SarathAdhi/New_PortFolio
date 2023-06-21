@@ -37,11 +37,9 @@ function MyApp({ Component, pageProps }) {
             src="/assets/new-portfolio.png"
           />
 
-          <Link href="https://www.sarathadhi.me/">
-            <span className="text-blue-700 underline text-center !text-xl font-semibold">
-              Portfolio 2023
-            </span>
-          </Link>
+          <span className="text-blue-700 underline text-center !text-xl font-semibold">
+            <Link href="https://www.sarathadhi.me/">Portfolio 2023</Link>
+          </span>
         </div>
       </PopupModal>
     </ContextProvider>
