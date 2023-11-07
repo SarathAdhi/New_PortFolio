@@ -38,7 +38,9 @@ function MyApp({ Component, pageProps }) {
           />
 
           <span className="text-blue-700 underline text-center !text-xl font-semibold">
-            <Link href="https://www.sarathadhi.me/">Portfolio 2023</Link>
+            <Link href="https://sarathadhithya.vercel.app/">
+              Portfolio 2023
+            </Link>
           </span>
         </div>
       </PopupModal>
