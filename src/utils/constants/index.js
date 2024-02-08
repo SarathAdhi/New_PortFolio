@@ -1,5 +1,7 @@
 import { BsFillGridFill } from "react-icons/bs";
 
+export const NEW_2023_PORTFOLIO = "https://sarathadhithya.vercel.app";
+
 export const companies = [
   {
     name: "VIT - Chennai",

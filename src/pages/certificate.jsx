@@ -4,6 +4,16 @@ import { client, urlFor } from "../client";
 import { PageWrapper } from "../common/layout/PageWrapper";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
+import { NEW_2023_PORTFOLIO } from "../utils/constants";
+
+export async function getServerSideProps() {
+  return {
+    redirect: {
+      destination: NEW_2023_PORTFOLIO,
+      permanent: false,
+    },
+  };
+}
 
 export default function Certificate() {
   const [certificateDetails, setCertificateDetails] = useState([]);

@@ -4,8 +4,17 @@ import { client } from "../client";
 import { motion } from "framer-motion";
 import AnimatedCard from "../common/components/AnimatedCard";
 import { PageWrapper } from "../common/layout/PageWrapper";
-import { majority, skillsTab } from "../utils/constants";
+import { NEW_2023_PORTFOLIO, majority, skillsTab } from "../utils/constants";
 import { useRouter } from "next/router";
+
+export async function getServerSideProps() {
+  return {
+    redirect: {
+      destination: NEW_2023_PORTFOLIO,
+      permanent: false,
+    },
+  };
+}
 
 export default function Skills() {
   const router = useRouter();

@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
   useEffect(() => {
-    router.replace("https://sarathadhithya.vercel.app");
+    // router.replace("https://sarathadhithya.vercel.app");
     setTimeout(() => setIsLoading(false), 1000);
   }, []);
 

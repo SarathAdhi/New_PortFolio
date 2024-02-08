@@ -5,6 +5,16 @@ import { Input, Textarea } from "../common/components/elements/Input";
 import { ShowSuccessToast } from "../common/components/Toast";
 import { toast } from "react-toastify";
 import { LoadingSvg } from "../common/components/LoadingSvg";
+import { NEW_2023_PORTFOLIO } from "../utils/constants";
+
+export async function getServerSideProps() {
+  return {
+    redirect: {
+      destination: NEW_2023_PORTFOLIO,
+      permanent: false,
+    },
+  };
+}
 
 export default function Contact() {
   const [isLoading, setIsLoading] = useState(false);

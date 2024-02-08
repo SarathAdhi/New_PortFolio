@@ -4,9 +4,18 @@ import { client } from "../../client";
 import AnimatedCard from "../../common/components/AnimatedCard";
 import { motion } from "framer-motion";
 import { ProjectCard } from "../../common/components/ProjectCard";
-import { projectTab } from "../../utils/constants";
+import { NEW_2023_PORTFOLIO, projectTab } from "../../utils/constants";
 import { LoadingSvg } from "../../common/components/LoadingSvg";
 import { useRouter } from "next/router";
+
+export async function getServerSideProps() {
+  return {
+    redirect: {
+      destination: NEW_2023_PORTFOLIO,
+      permanent: false,
+    },
+  };
+}
 
 export default function Projects() {
   const router = useRouter();

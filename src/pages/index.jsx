@@ -5,9 +5,18 @@ import clsx from "clsx";
 import { SocialMedia } from "../common/components/social-media/SocialMedia";
 import { FiDownload } from "react-icons/fi";
 import { TimeLine } from "../common/components/TimeLine";
-import { companies } from "../utils/constants";
+import { NEW_2023_PORTFOLIO, companies } from "../utils/constants";
 import PopupModal from "../common/components/PopupModal";
 import { useState } from "react";
+
+export async function getServerSideProps() {
+  return {
+    redirect: {
+      destination: NEW_2023_PORTFOLIO,
+      permanent: false,
+    },
+  };
+}
 
 export default function Home() {
   const [isOpenModal, setIsOpenModal] = useState(false);
