@@ -96,15 +96,15 @@ export default function DisplayProject() {
   );
 }
 
-export async function getServerSideProps(context) {
-  const { id } = context.query;
+// export async function getServerSideProps(context) {
+//   const { id } = context.query;
 
-  const projectsQuery = `*[_type == "projects" && name == "${id}"]`;
-  const response = await client.fetch(projectsQuery);
+//   const projectsQuery = `*[_type == "projects" && name == "${id}"]`;
+//   const response = await client.fetch(projectsQuery);
 
-  return {
-    props: {
-      projectData: response[0],
-    },
-  };
-}
+//   return {
+//     props: {
+//       projectData: response[0],
+//     },
+//   };
+// }
