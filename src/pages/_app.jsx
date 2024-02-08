@@ -7,12 +7,16 @@ import dynamic from "next/dynamic";
 import "../styles/globals.css";
 import PopupModal from "../common/components/PopupModal";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
   const [isLoading, setIsLoading] = useState(true);
   const [isModelOpen, setIsModelOpen] = useState(true);
 
+  const router = useRouter();
+
   useEffect(() => {
+    router.replace("https://sarathadhithya.vercel.app");
     setTimeout(() => setIsLoading(false), 1000);
   }, []);
 
